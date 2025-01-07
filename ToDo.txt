@@ -1,0 +1,23 @@
+Spalten:	Erledigt?
+Teamlogo	Ja
+Team		Ja
+ID		Ja
+Pos		Ja
+Name		Ja
+Alter		Ja
+Nationlogo	Ja
+Nation		Ja
+Größe		Ja
+Gewicht		Ja
+GES		Ja
+Talent		Ja
+Pot.		Ja
+Weit.Pos	Ja
+MW		Ja
+Vertrag in Jr	Ja
+TEM		Nein
+SCH		Nein
+PAS		Nein
+DRI		Nein
+DEF		Nein
+PHY		Nein

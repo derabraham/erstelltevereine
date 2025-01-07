@@ -1,0 +1,210 @@
+/* Körper und allgemeine Layout-Stile */
+body {
+    margin: 0; /* Entfernt Standardabstand des Browsers */
+    padding: 0; /* Entfernt Standardinnenabstand */
+    width: 100%; /* Setzt die Breite auf 100% des Viewports */
+    min-width: 100vw; /* Stellt sicher, dass der Body mindestens die Breite des Viewports hat */
+    box-sizing: border-box; /* Schließt Padding und Border in der Breite ein */
+    overflow-x: hidden;
+}
+
+/* Container: Vollbildbreite */
+.container {
+    width: 100%;           /* Container über gesamte Breite */
+    max-width: 100%;       /* Verhindert Begrenzung durch Bootstrap */
+    padding: 0 15px;       /* Optionale Abstände */
+    box-sizing: border-box;
+}
+
+/* Überschriften */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Größere Überschrift */
+    color: #333;
+    position: relative;
+}
+
+/* Tabelle */
+.table {
+    border-collapse: collapse; /* Verhindert doppelte Rahmen */
+    width: 100%; /* Volle Breite für die Tabelle */
+    table-layout: auto; /* Automatische Breitenanpassung je nach Inhalt */
+    vertical-align: middle;
+}
+
+/* Tabelle Bilder */
+.table img {
+    max-width: 50px; /* Maximale Breite für das Bild */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Zentriert das Bild */
+}
+
+/* Pfeile für Sortierung hinzufügen */
+.table th.sorted-asc::after {
+    content: " ↑"; /* Aufsteigende Sortierung */
+    font-size: 1.2rem;
+    color: #000000; /* Schwarz für den Aufwärtspfeil */
+    margin-left: 5px;
+}
+
+.table th.sorted-desc::after {
+    content: " ↓"; /* Absteigende Sortierung */
+    font-size: 1.2rem;
+    color: #000000; /* Schwarz für den Abwärtspfeil */
+    margin-left: 5px;
+}
+
+/* Sortierte Spalten fett anzeigen */
+.table th.sorted-asc,
+.table th.sorted-desc {
+    font-weight: bold;
+}
+
+/* Spaltenüberschrift anpassungen */
+.table th {
+    cursor: pointer; /* Zeiger beim Überfahren der Spaltenüberschrift */
+    padding: 12px 10px;
+    text-align: center; /* Standardmäßig zentriert */
+    font-size: 1.1rem; /* Etwas größere Schrift für bessere Lesbarkeit */
+    background-color: #f4f4f4; /* Helles Grau für den Hintergrund der Kopfzeile */
+    border-bottom: 2px solid #ddd;
+}
+
+/* Ausnahme: Verein und Nation bleiben linksbündig */
+.table th:nth-child(2), /* Verein */
+.table th:nth-child(8) { /* Nation */
+    text-align: left; /* Text linksbündig */
+}
+
+.table th:nth-child(7)
+.table th:nth-child(1) { /* Nation */
+    text-align: right; /* Text linksbündig */
+}
+
+/* Alternierende Zeilenfarben in der Tabelle */
+.table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Abwechselnde Zeilenfarbe */
+}
+
+/* Tabelle Zellen */
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center; /* Standardmäßig zentriert */
+    word-wrap: break-word; /* Umbruch langer Inhalte */
+}
+
+/* Ausnahme: Verein und Nation bleiben linksbündig */
+.table td:nth-child(2), /* Verein */
+.table td:nth-child(8) { /* Nation */
+    text-align: left; /* Text linksbündig */
+}
+
+.table td:nth-child(5) { /* Nation */
+    font-size: larger; /* Text linksbündig */
+    font-weight: bold;
+}
+
+.table td:nth-child(7)
+.table td:nth-child(1) { /* Nation */
+    text-align: right; /* Text linksbündig */
+}
+
+/* Allgemeines Styling für die Position */
+.position {
+    font-weight: bold; /* Fettgedruckt */
+    text-align: center; /* Zentriert */
+    transition: color 0.3s ease; /* Sanfter Übergang bei Hover */
+}
+
+/* Farben für spezifische Positionen */
+.position.tw {
+    color: orange; /* Torwart */
+}
+.position.iv,
+.position.rv,
+.position.lv {
+    color: blue; /* Verteidiger */
+}
+.position.zdm,
+.position.zm,
+.position.lm,
+.position.rm,
+.position.zom {
+    color: green; /* Mittelfeldspieler */
+}
+.position.lf,
+.position.rf,
+.position.hs,
+.position.st {
+    color: red; /* Stürmer */
+}
+
+/* Behalte die Farben beim Hover */
+.position:hover {
+    opacity: 0.8; /* Leichtes Verblassen beim Hover */
+}
+
+/* Allgemeines Styling für Tabellenzeilen beim Hover */
+tr:hover {
+    background-color: white; /* Heller Hintergrund beim Hover */
+}
+
+/* Allgemeines Styling für GES */
+.ges {
+    font-weight: bold; /* Fettgedruckt */
+    text-align: center; /* Zentriert */
+    transition: color 0.3s ease; /* Sanfter Übergang bei Hover */
+}
+
+/* Farben für GES-Bereiche */
+.ges.gold { 
+    color: rgb(185, 157, 4); /* 75+ */
+    font-size: larger;
+}
+.ges.silver { 
+    color: rgb(159, 159, 159); /* 65-74 */
+    font-size: larger;
+}
+.ges.bronze { 
+    color: #cd7f32; /* Bronze-Farbton für 0-64 */
+    font-size: larger;
+}
+
+/* Filterbereich */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Größerer Abstand zwischen den Filterfeldern */
+    margin: 20px 0;
+}
+
+/* Filter-Dropdowns */
+.filter-container select {
+    padding: 10px;
+    font-size: 1.1rem;
+    width: 200px; /* Größere Breite für die Dropdowns */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Abgerundete Ecken für ein moderneres Design */
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column; /* Filter untereinander bei kleineren Geräten */
+        align-items: center;
+    }
+
+    .filter-container select {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #search {
+        width: 80%; /* Suchfeld breiter auf kleineren Geräten */
+    }
+}
